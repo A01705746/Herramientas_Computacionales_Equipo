@@ -46,7 +46,7 @@ _- Al momento de poner la imagen en el programa debe estar escrita con extenxió
 
 ## Referencias 📖
 
-[Convolution Examples](https://aishack.in/tutorials/image-convolution-examples/)
+[Convolution Examples](https://aishack.in/tutorials/image-convolution-examples/) <br>
 [Code from Abhisek Jana](https://github.com/adeveloperdiary/blog/tree/master/Computer_Vision/Sobel_Edge_Detection)
 
 ## Versionado 📌
