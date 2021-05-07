@@ -26,6 +26,25 @@ def convolution(image, kernel):
     else:
         print("Dimenciones de imagen: {}".format(image.shape))
 
+    image_row, image_col = image.shape #asigna alto y ancho de la imagen 
+    kernel_row, kernel_col = kernel.shape #asigna alto y ancho del filtro
+
+    output_x = (image_col - (kernel_col / 2) * 2) + 1 #asigna el ancho del output
+    output_y = (image_row - (kernel_row / 2) * 2) + 1 #asigna el alto del output
+   
+    output = np.zeros([int(output_y), int(output_x)]) #matriz donde se guarda el resultado
+   
+    for row in range(int(output_y)):
+        for col in range(int(output_x)):
+            output[row, col] = conv_helper(
+                                image[row:row + kernel_row, 
+                                col:col + kernel_col], kernel)
+    
+    # Se muestra la imagen en pantalla
+    plt.imshow(output, cmap='gray')
+    plt.title("Edge detection")
+    plt.show()
+
     return 0
 
 if __name__ == '__main__':
