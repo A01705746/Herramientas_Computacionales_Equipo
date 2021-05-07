@@ -16,26 +16,3 @@ def padding(image, padded_size):
 
     
     return padded_image
-
-
-if __name__ == '__main__':
-
-    #Matriz de imagen
-    image = np.array([[1,2,3,4,5,6],
-                     [7,8,9,10,11,12],
-                     [2,5,1,16,17,18],
-                     [4,1,8,7,23,24],
-                     [1,7,6,5,4,3]])
-
-    #Tamaño de padding
-    padded_size = 2
-
-    #Impresion de entradas
-    print("Orignal Matrix:")
-    print(image)
-
-    print("Tamaño de padding:")
-    print(padded_size)
-
-    #LLamamos a la funcion
-    padding(image, padded_size)
