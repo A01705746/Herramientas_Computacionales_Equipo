@@ -62,7 +62,7 @@ Se usó [Git](https://git-scm.com/) para el versionado. Dentro de los commits se
 _Profesor_
 * **Benjamín Valdés Aguirre**
 
-[contribuyentes](https://github.com/A01705746/Herramientas_Computacionales_Equipo/contributors)
+[Contribuyentes](https://github.com/A01705746/Herramientas_Computacionales_Equipo/contributors)
 
 ## Expresiones de Gratitud 🎁
 
