@@ -1,9 +1,5 @@
 # Procesador de imagen con filtros
 
-David Guzmán Leyva                A01706417
-Enrique Santos Fraire             A01705746
-Jesús Uriel Sánchez de la Vega    A01706515
-
 Dentro de este repositorio de equipo se encuentra un programa de procesamiento de imagenes hecho en Python, por el que mediante el uso de matrices se le aplicarán disitnos filtros a una imágen.
 
 ## Comenzando 🚀
@@ -41,7 +37,7 @@ python main.py
 
 ## Consideraciones
 
-_- Las imagenes deben estar en la misma carpeta que los programas del proyecto en caso de querer agregar más_
+_- Las imagenes deben estar en la misma carpeta que los programas del proyecto en caso de querer agregar más_ <br>
 _- Al momento de poner la imagen en el programa debe estar escrita con extenxión_
 
 ## Construido con 🛠️
