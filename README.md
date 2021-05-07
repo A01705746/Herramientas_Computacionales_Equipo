@@ -1,5 +1,9 @@
 # Procesador de imagen con filtros
 
+David Guzmán Leyva                A01706417
+Enrique Santos Fraire             A01705746
+Jesús Uriel Sánchez de la Vega    A01706515
+
 Dentro de este repositorio de equipo se encuentra un programa de procesamiento de imagenes hecho en Python, por el que mediante el uso de matrices se le aplicarán disitnos filtros a una imágen.
 
 ## Comenzando 🚀
@@ -8,49 +12,46 @@ Para correr el programa es necesario lo siguiente:
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-```
-Da un ejemplo
-```
+_Tener la versión 3.9 o superior de Python_
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
+_Clonar el repositorio o descargar la carpeta proyecto_
 
 ```
-Da un ejemplo
+git clone 'link del repositorio'
 ```
 
-_Y repite_
+_Instalar las librerías necesarias por medio de pip install_
 
 ```
-hasta finalizar
+pip install numpy
+pip install opencv-python
+pip install argparse
+pip install matplotlib.pyplot
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+## Corrida 📦
 
-## Despliegue 📦
+_Dependiendo de donde se corra el programa se utiliza el botón run o desde consola:_
 
-_Agrega notas adicionales sobre como hacer deploy_
+```
+python main.py
+```
+
+## Consideraciones
+
+_- Las imagenes deben estar en la misma carpeta que los programas del proyecto en caso de querer agregar más_
+_- Al momento de poner la imagen en el programa debe estar escrita con extenxión_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+* [Visual Studio Code](https://code.visualstudio.com/) - Editor de texto
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+## Referencias 📖
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+[Convolution Examples](https://aishack.in/tutorials/image-convolution-examples/)
+[Code from Abhisek Jana](https://github.com/adeveloperdiary/blog/tree/master/Computer_Vision/Sobel_Edge_Detection)
 
 ## Versionado 📌
 
@@ -60,14 +61,11 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+* **David Guzmán Leyva** - *A01706417* - *Participante*
+* **Enrique Santos Fraire** - *A01705746* - *Líder*
+* **Jesús Uriel Sánchez de la Vega** - *A01706515* - *Supervisor*
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+[contribuyentes](https://github.com/A01705746/Herramientas_Computacionales_Equipo/contributors)
 
 ## Expresiones de Gratitud 🎁
 
@@ -79,4 +77,4 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+Plantilla de README.md por [Villanuevand](https://github.com/Villanuevand) 😊
