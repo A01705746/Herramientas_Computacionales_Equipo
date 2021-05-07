@@ -18,32 +18,34 @@ def convolution(image, kernel):
     y devuelve la matriz resultante de la operación
     """
 
-    image_row, image_col = image.shape #asigna alto y ancho de la imagen 
-    kernel_row, kernel_col = kernel.shape #asigna alto y ancho del filtro
+    image_row, image_col = image.shape #Asigna alto y ancho de la imagen 
+    kernel_row, kernel_col = kernel.shape #Asigna alto y ancho del filtro
     
     output_x = (image_col - (kernel_col / 2) * 2) + 1 
     output_y = (image_row - (kernel_row / 2) * 2) + 1 
     
-    output = np.zeros([int(output_y), int(output_x)]) #matriz donde guardo el resultado
+    output = np.zeros([int(output_y), int(output_x)]) #Matriz donde guardo el resultado
 
     for row in range(int(output_y)):
         for col in range(int(output_x)):
             output[row, col] = conv_helper(
                                 image[row:row + kernel_row, 
                                 col:col + kernel_col],kernel)
-    print(output)  #se coloca el print para imprimir al final del call de la funcion
+    print(output)  #Se coloca el print para imprimir al final del call de la funcion
 
 if __name__ == '__main__':
 
+#Matriz de prueba.
     image = np.array([[1,3,43,1,2,3],
                     [7,0,0,9,1,12],
                     [0,1,2,16,17,20],
                     [0,0,0,7,100,22],
                     [1,0,0,0,4,3]])
 
+#Filtro de prueba.
     filter = np.array([[1,1,1],
                     [0,0,0],
                     [4,0,5]]) 
                     
                     
-convolution(image, filter) 
+convolution(image, filter)  #Se llama la función que automaticamente imprimira el resultado.
