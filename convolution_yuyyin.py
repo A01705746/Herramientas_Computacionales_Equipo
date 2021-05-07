@@ -47,7 +47,7 @@ def convolution(image, kernel):
 
 if __name__ == '__main__':
 #Imagen de prueba.
-    image = cv2.imread("index.jpg")
+    image = cv2.imread("naruto.png")
 #Filtro line detectition Horizontal.
     filter = np.array([[-1,-1,-1],
                     [2,2,2],
