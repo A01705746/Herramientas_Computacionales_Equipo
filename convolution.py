@@ -45,13 +45,8 @@ def convolution(image, kernel):
             output[row, col] = conv_helper(
                                 padded_image[row:row + kernel_row, 
                                 col:col + kernel_col], kernel)
-    
-    # Se muestra la imagen en pantalla
-    plt.imshow(output, cmap='gray')
-    plt.title("Edge detection")
-    plt.show()
 
-    return 0
+    return output
 
 if __name__ == '__main__':
 

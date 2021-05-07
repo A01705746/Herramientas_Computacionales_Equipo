@@ -2,6 +2,7 @@
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+from convolution import convolution
 
 if __name__ == '__main__':
 
@@ -18,7 +19,7 @@ if __name__ == '__main__':
     # Menu
     filtros = """
 Aplicar filtro
-1.- Filtro 1 - David
+1.- Edge detection
 2.- Filtro 2 - Enrique
 3.- Filtro 3 - Uriel
 4.- Cambiar de imagen
@@ -32,7 +33,15 @@ Aplicar filtro
         op = input()
 
         if op == "1":
-            print('Filtro David')
+            edgeDetection = np.array([[-1, -1, -1],
+                                    [-1, 8, -1],
+                                    [-1, -1, -1]])
+            imageEdge = convolution(image,edgeDetection) # Función de convolución con padding
+            # Mostrar el plot del resultado con filtro.
+            plt.imshow(imageEdge, cmap= 'twilight_shifted')
+            edge_row, edge_col = imageEdge.shape
+            plt.title("Output Edge detection of {}X{}".format(edge_row, edge_col))
+            plt.show()
         elif op == "2":
             print('Filtro Enrique')
         elif op == "3":
