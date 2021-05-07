@@ -35,7 +35,7 @@ _Dependiendo de donde se corra el programa se utiliza el botón run o desde cons
 python main.py
 ```
 
-## Consideraciones
+## Consideraciones  :pencil2:
 
 _- Las imagenes deben estar en la misma carpeta que los programas del proyecto en caso de querer agregar más_ <br>
 _- Al momento de poner la imagen en el programa debe estar escrita con extenxión_
