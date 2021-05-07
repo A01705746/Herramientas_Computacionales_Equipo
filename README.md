@@ -4,10 +4,7 @@ Dentro de este repositorio de equipo se encuentra un programa de procesamiento d
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+Para correr el programa es necesario lo siguiente:
 
 ### Pre-requisitos 📋
 
