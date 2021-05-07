@@ -7,7 +7,8 @@ def conv_helper(fragment, kernel):
     
     f_row, f_col = fragment.shape
     k_row, k_col = kernel.shape 
-    result = 0.0
+    result = 0
+
     for row in range(f_row):
         for col in range(f_col):
             result += fragment[row,col] *  kernel[row,col]
@@ -17,9 +18,16 @@ def convolution(image, kernel):
     """Aplica una convolucion sin padding (valida) de una dimesion 
     y devuelve la matriz resultante de la operación
     """
+#Se encuentra la dimencion de la imagen
+    if len(image.shape) == 3: #De 3 dimenciones
+        print("Dimenciones de imagen: {}".format(image.shape))
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #Se cambia a dos dimenciones
+        print("Nuevas dimenciones: {}".format(image.shape))
+    else:
+        print("Dimenciones de imagen: {}".format(image.shape))
 
-    image_row, image_col = image.shape #Asigna alto y ancho de la imagen 
-    kernel_row, kernel_col = kernel.shape #Asigna alto y ancho del filtro
+    image_row, image_col = image.shape #asigna alto y ancho de la imagen 
+    kernel_row, kernel_col = kernel.shape #asigna alto y ancho del filtro
     
     output_x = (image_col - (kernel_col / 2) * 2) + 1 
     output_y = (image_row - (kernel_row / 2) * 2) + 1 
@@ -31,21 +39,20 @@ def convolution(image, kernel):
             output[row, col] = conv_helper(
                                 image[row:row + kernel_row, 
                                 col:col + kernel_col],kernel)
-    print(output)  #Se coloca el print para imprimir al final del call de la funcion
+    plt.imshow(output, cmap='gray')
+    plt.title("Filtro aplicado")
+    plt.show()
+    
+    return output
 
 if __name__ == '__main__':
+#Imagen de prueba.
+    image = cv2.imread("index.jpg")
+#Filtro line detectition Horizontal.
+    filter = np.array([[-1,-1,-1],
+                    [2,2,2],
+                    [-1,-1,-1]]) 
 
-#Matriz de prueba.
-    image = np.array([[1,3,43,1,2,3],
-                    [7,0,0,9,1,12],
-                    [0,1,2,16,17,20],
-                    [0,0,0,7,100,22],
-                    [1,0,0,0,4,3]])
-
-#Filtro de prueba.
-    filter = np.array([[1,1,1],
-                    [0,0,0],
-                    [4,0,5]]) 
-                    
-                    
-convolution(image, filter)  #Se llama la función que automaticamente imprimira el resultado.
+print("Filter: ")
+print(filter) #Se impmrime la matriz de filtro.
+convolution(image, filter) # Se manda a llamar la funcion.
