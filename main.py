@@ -2,6 +2,7 @@
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+from convolution import convolution
 
 if __name__ == '__main__':
 
@@ -34,7 +35,15 @@ Aplicar filtro
         if op == "1":
             print('Filtro David')
         elif op == "2":
-            print('Filtro Enrique')
+            sobel= np.array([[-1,0,1],
+                            [-2,0,2],
+                            [-1,0,1]])
+            imageSobel = convolution(image,sobel) # Función de convolución con padding
+            # Mostrar el plot del resultado con filtro.
+            plt.imshow(imageSobel, cmap= 'twilight_shifted')
+            sobel_row, sobel_col = imageSobel.shape
+            plt.title("Output Sobel of {}X{}".format(sobel_row, sobel_col))
+            plt.show()
         elif op == "3":
             print('Filtro Uriel')
         elif op == "4":
