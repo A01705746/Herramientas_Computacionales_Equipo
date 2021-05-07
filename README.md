@@ -67,7 +67,7 @@ _Profesor_
 
 ## Reflexión 🎁
 
-Con esta semana tec se buscó fomentar el trabajo en equipo para implementar el manejo de versiones desde un repositorio remoto a través de git. Esto para lograr un flujo de trabajo más eficiente y productivo en futuros proyectos, con mayor organización y distribución de actividades para lograr buenas prácticas de codificación, siguiendo los estándares internacionales y normas adecuadas. Además de entender cómo se comportan las imágenes en la computadora y saber manipularlas por medio de filtros y matrices.
+<p class="text-center">Con esta semana tec se buscó fomentar el trabajo en equipo para implementar el manejo de versiones desde un repositorio remoto a través de git. Esto para lograr un flujo de trabajo más eficiente y productivo en futuros proyectos, con mayor organización y distribución de actividades para lograr buenas prácticas de codificación, siguiendo los estándares internacionales y normas adecuadas. Además de entender cómo se comportan las imágenes en la computadora y saber manipularlas por medio de filtros y matrices.</p>
 
 
 ---
