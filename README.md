@@ -9,7 +9,7 @@ Para correr el programa es necesario lo siguiente:
 ### Pre-requisitos 📋
 
 _Tener la versión 3.9 o superior de Python_<br>
-_Tener Git instalado_
+_Tener Git instalado en caso de querer clonar el repositorio_
 
 ### Instalación 🔧
 
