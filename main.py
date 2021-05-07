@@ -43,7 +43,15 @@ Aplicar filtro
             plt.title("Output Edge detection of {}X{}".format(edge_row, edge_col))
             plt.show()
         elif op == "2":
-            print('Filtro Enrique')
+            sobel= np.array([[-1,0,1],
+                            [-2,0,2],
+                            [-1,0,1]])
+            imageSobel = convolution(image,sobel) # Función de convolución con padding
+            # Mostrar el plot del resultado con filtro.
+            plt.imshow(imageSobel, cmap= 'twilight_shifted')
+            sobel_row, sobel_col = imageSobel.shape
+            plt.title("Output Sobel of {}X{}".format(sobel_row, sobel_col))
+            plt.show()
         elif op == "3":
             lineDetection = np.array([[-1,-1,-1],
                                     [2,2,2],
