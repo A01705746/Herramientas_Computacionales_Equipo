@@ -80,7 +80,9 @@ if __name__ == '__main__':
     # cambia la imagen a formato numerico, matriz de 3 dimensiones rgb
     image = cv2.imread(args["image"])
 
-    plt.imshow(image, cmap='gray')
+    RGB_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    plt.imshow(RGB_img, cmap='gray')
     plt.title("Original Image")
     plt.show()
 
