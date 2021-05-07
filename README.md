@@ -1,6 +1,6 @@
 # Procesador de imagen con filtros
 
-_Acá va un párrafo que describa lo que es el proyecto_
+Dentro de este repositorio de equipo se encuentra un programa de procesamiento de imagenes hecho en Python, por el que mediante el uso de matrices se le aplicarán disitnos filtros a una imágen.
 
 ## Comenzando 🚀
 
