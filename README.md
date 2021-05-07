@@ -1,6 +1,6 @@
 # Procesador de imagen con filtros
 
-Dentro de este repositorio de equipo se encuentra un programa de procesamiento de imagenes hecho en Python, por el que mediante el uso de matrices se le aplicarán disitnos filtros a una imágen.
+Dentro de este repositorio de equipo se encuentra un programa de procesamiento de imagenes hecho en Python, por el que mediante el uso de matrices se le aplicarán disitnos filtros para manipular una imágen y analizar su comportamiento.
 
 ## Comenzando 🚀
 
@@ -43,6 +43,7 @@ _- Al momento de poner la imagen en el programa debe estar escrita con extenxió
 ## Construido con 🛠️
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Editor de texto
+* [Python](https://www.python.org/) - Lenguaje
 
 ## Referencias 📖
 
@@ -64,13 +65,9 @@ _Profesor_
 
 [Contribuyentes](https://github.com/A01705746/Herramientas_Computacionales_Equipo/contributors)
 
-## Expresiones de Gratitud 🎁
+## Reflexión 🎁
 
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
+Con esta semana tec se buscó fomentar el trabajo en equipo para implementar el manejo de versiones desde un repositorio remoto a través de git. Esto para lograr un flujo de trabajo más eficiente y productivo en futuros proyectos, con mayor organización y distribución de actividades para lograr buenas prácticas de codificación, siguiendo los estándares internacionales y normas adecuadas. Además de entender cómo se comportan las imágenes en la computadora y saber manipularlas por medio de filtros y matrices.
 
 
 ---
