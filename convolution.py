@@ -2,6 +2,7 @@
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+from padding import padding
 
 def conv_helper(fragment, kernel):
     """ multiplica 2 matices y devuelve su suma"""
@@ -33,11 +34,16 @@ def convolution(image, kernel):
     output_y = (image_row - (kernel_row / 2) * 2) + 1 #asigna el alto del output
    
     output = np.zeros([int(output_y), int(output_x)]) #matriz donde se guarda el resultado
+
+    padded_size = int((kernel_row - 1) / 2) #Tamaño de padding
+
+    #Obtenemos la imagen con padding
+    padded_image = padding(image,padded_size)
    
     for row in range(int(output_y)):
         for col in range(int(output_x)):
             output[row, col] = conv_helper(
-                                image[row:row + kernel_row, 
+                                padded_image[row:row + kernel_row, 
                                 col:col + kernel_col], kernel)
     
     # Se muestra la imagen en pantalla
