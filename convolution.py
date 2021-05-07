@@ -1,13 +1,14 @@
-#Librerias
+#Librerias para hacer uso de matrices.
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import argparse
 from padding import padding
 
 def conv_helper(fragment, kernel):
     """ multiplica 2 matices y devuelve su suma"""
     
-    f_row, f_col = fragment.shape #asigna el alto y ancho del fragmento
+    f_row, f_col = fragment.shape # obtiene tupla con las medidas de alto y ancho del fragmento
     
     resultado = 0
     for row in range(f_row):
@@ -16,10 +17,10 @@ def conv_helper(fragment, kernel):
     return resultado
 
 def convolution(image, kernel):
-    """Aplica una convolucion sin padding de dos matrices
+    """Función de convolución con padding
     """
 
-    #Se encuentra la dimencion de la imagen
+    # Analiza la imágen para que en caso de que tenga color se convierte a escala de grises, de 3 dimesiones a 2
     if len(image.shape) == 3: #De 3 dimenciones
         print("Dimenciones de imagen: {}".format(image.shape))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #Se cambia a dos dimenciones
@@ -27,44 +28,42 @@ def convolution(image, kernel):
     else:
         print("Dimenciones de imagen: {}".format(image.shape))
 
-    image_row, image_col = image.shape #asigna alto y ancho de la imagen 
-    kernel_row, kernel_col = kernel.shape #asigna alto y ancho del filtro
+    # Tamaño del filtro
+    print("Kernel Shape : {}".format(kernel.shape))
 
-    output_x = (image_col - (kernel_col / 2) * 2) + 1 #asigna el ancho del output
-    output_y = (image_row - (kernel_row / 2) * 2) + 1 #asigna el alto del output
-   
-    output = np.zeros([int(output_y), int(output_x)]) #matriz donde se guarda el resultado
+    # Impresión de filtro kernel
+    print('Kernel')
+    for row in kernel:
+            for col in row:
+                print(col ,end=' ')
+            print(end='\n')
 
+    image_row, image_col = image.shape # Obtiene una tupla y asigna alto y ancho de la imagen. 
+    kernel_row, kernel_col = kernel.shape # Obtiene una tupla y asigna alto y ancho del filtro.
+
+    output_x = (image_col - (kernel_col / 2) * 2) + 1 #Asigna el ancho del output en base al filtro.
+    output_y = (image_row - (kernel_row / 2) * 2) + 1 #Asigna el alto del output en base al filtro.
+
+    output = np.zeros([int(output_y), int(output_x)]) # Matriz donde se guarda el resultado.
+
+    # (filas o columnas - 1) / 2
     padded_size = int((kernel_row - 1) / 2) #Tamaño de padding
 
     #Obtenemos la imagen con padding
     padded_image = padding(image,padded_size)
-   
+
+    # Mostrar el plot de la imágen con padding
+    plt.imshow(padded_image, cmap='gray')
+    plt.title("Padded Image of {}X{}".format(image_row, image_col))
+    plt.show()
+
+    #  Multiplica la matriz de image con la de kernel y devuelve la suma de esta con conv_helper
     for row in range(int(output_y)):
         for col in range(int(output_x)):
             output[row, col] = conv_helper(
                                 padded_image[row:row + kernel_row, 
                                 col:col + kernel_col], kernel)
 
+    print("Output Image size : {}".format(output.shape))
+
     return output
-
-if __name__ == '__main__':
-
-    #Se obtiene la imagen con cv2
-    image = cv2.imread("naruto.png")
-
-    #Se define la matriz del filtro
-    filter = np.array([[-1, -1, -1],
-                      [-1, 8, -1],
-                      [-1, -1, -1]])
-                      
-    #Impresion de entradas y salidas
-    plt.imshow(image, cmap='gray')
-    plt.title("Imagen")
-    plt.show()
-
-    print("Filter:")
-    print(filter)
-
-    #Mandamos a llamar la funcion
-    convolution(image,filter)

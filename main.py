@@ -20,7 +20,7 @@ if __name__ == '__main__':
     filtros = """
 Aplicar filtro
 1.- Edge detection
-2.- Filtro 2 - Enrique
+2.- Sobel
 3.- Line detection horizontal
 4.- Cambiar de imagen
 5.- Salir                 
