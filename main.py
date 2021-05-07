@@ -38,7 +38,15 @@ Aplicar filtro
         elif op == "3":
             print('Filtro Uriel')
         elif op == "4":
-            print('Cambio de imagen')
+            #Se obtiene la imagen con cv2 y la convierte a una matriz de 3 dimensiones rgb.
+            print("Escribe un nuevo nombre de una imagen que este en la carpeta del proyecto:")
+            image = cv2.imread(input())
+            RGB_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) #convierte el espectro de color a RGB.
+
+            # Muestra la imagen original por un plot.
+            plt.imshow(RGB_img, cmap= 'twilight_shifted')
+            plt.title("Imagen Original")
+            plt.show()
         elif op == "5":
             pop = False
         else:
