@@ -1,21 +1,13 @@
+# Importación de librerías
 import numpy as np
 import cv2
 import argparse
 import matplotlib.pyplot as plt
 
-# Función que multiplica la matriz de image con la de kernel y devuelve la suma de esta
-def conv_helper(fragment, kernel):
-    f_row, f_col = fragment.shape
-    k_row, k_col = kernel.shape
-    result = 0.0
-    for row in range(f_row):
-        for col in range(f_col):
-            result += fragment[row,col] *  kernel[row,col]
-    return result
-
-# Función de convolución sin padding que devuelve la matriz resultante del mismo tamaño de la matriz image
+# Función de convolución con padding
 def convolution(image, kernel):
 
+    # Analiza la imágen para que en caso de que tenga color se convierte a escala de grises, de 3 dimesiones a 2
     if len(image.shape) == 3:
         print("Found 3 Channels : {}".format(image.shape))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -23,11 +15,11 @@ def convolution(image, kernel):
     else:
         print("Image Shape : {}".format(image.shape))
 
+    # Tamaño del filtro
     print("Kernel Shape : {}".format(kernel.shape))
 
-    # Impresión de matriz image
-    print('Kernel')
     # Impresión de filtro kernel
+    print('Kernel')
     for row in kernel:
             for col in row:
                 print(col ,end=' ')
@@ -38,10 +30,14 @@ def convolution(image, kernel):
 
     output = np.zeros(image.shape) # Matriz vacía del tamaño de la imágen para guardar el resultado
 
+    # Altura y ancho del padding en base al filtro => (filas o columnas - 1) / 2
     pad_height = int((kernel_row - 1) / 2)
     pad_width = int((kernel_col - 1) / 2)
 
+    # Matriz vacía del tamaño de la imágen con padding
     padded_image = np.zeros((image_row + (2 * pad_height), image_col + (2 * pad_width)))
+
+    # Matriz de la imágen con padding
     padded_image[pad_height:padded_image.shape[0] - pad_height, pad_width:padded_image.shape[1] - pad_width] = image
 
     print("Padded image:")
@@ -52,15 +48,16 @@ def convolution(image, kernel):
     plt.title("Padded Image of {}X{}".format(image_row, image_col))
     plt.show()
 
+    #  Multiplica la matriz de image con la de kernel y devuelve la suma de esta
     for row in range(image_row):
         for col in range(image_col):
                 output[row, col] = np.sum(kernel * padded_image[row:row + kernel_row, col:col + kernel_col])
     
     print("Output Image size : {}".format(output.shape))
-    
+
     # Mostrar el plot del resultado con filtro
     plt.imshow(output, cmap='gray')
-    plt.title("Output Image using {}X{} Kernel".format(kernel_row, kernel_col))
+    plt.title("Output Image using {}X{} Kernel Sobel".format(kernel_row, kernel_col))
     plt.show()
 
     return output
@@ -72,19 +69,23 @@ if __name__ == '__main__':
                         [-2,0,2],
                         [-1,0,1]])
 
-    # obtiene la imagen de la linea de comando "python convolution_enrique.py -i naruto.png"
+    # Para obtener la imágen se corre el programa con la siguiente línea de comando:
+    # "python convolusiones.py -i Hatsune3.png"
+    # la imágen tiene que estar en la misma carpeta
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True, help="Path of image")
     args = vars(ap.parse_args())
 
-    # cambia la imagen a formato numerico, matriz de 3 dimensiones rgb
+    # Convierte la imagen a una matriz de 3 dimensiones rgb
     image = cv2.imread(args["image"])
-
+    
+    # Cambia la imágen a RGB para que conserve el color
     RGB_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+    # Muestra la imagen original por un plot
     plt.imshow(RGB_img, cmap='gray')
     plt.title("Original Image")
     plt.show()
 
-    # Se usa el print para ver la matriz resultante
+    # Se llama la función convolution
     convolution(image, filter)
