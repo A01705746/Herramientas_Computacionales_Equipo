@@ -51,15 +51,16 @@ _- Al momento de poner la imagen en el programa debe estar escrita con extenxió
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+Se usó [Git](https://git-scm.com/) para el versionado. Dentro de los commits se pueden ver las modificaciones de los participantes.
 
 ## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
 * **David Guzmán Leyva** - *A01706417* - *Participante*
 * **Enrique Santos Fraire** - *A01705746* - *Líder*
 * **Jesús Uriel Sánchez de la Vega** - *A01706515* - *Supervisor*
+
+_Profesor_
+* **Benjamín Valdés Aguirre**
 
 [contribuyentes](https://github.com/A01705746/Herramientas_Computacionales_Equipo/contributors)
 
