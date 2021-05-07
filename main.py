@@ -21,7 +21,7 @@ if __name__ == '__main__':
 Aplicar filtro
 1.- Edge detection
 2.- Filtro 2 - Enrique
-3.- Filtro 3 - Uriel
+3.- Line detection horizontal
 4.- Cambiar de imagen
 5.- Salir                 
             """
@@ -45,7 +45,15 @@ Aplicar filtro
         elif op == "2":
             print('Filtro Enrique')
         elif op == "3":
-            print('Filtro Uriel')
+            lineDetection = np.array([[-1,-1,-1],
+                                    [2,2,2],
+                                    [-1,-1,-1]])
+            imageLine = convolution(image,lineDetection) # Función de convolución con padding.
+            # Mostrar el plot del resultado con filtro.
+            plt.imshow(imageLine, cmap= 'twilight_shifted')
+            line_row, line_col = imageLine.shape
+            plt.title("Output Line Detection Horizontal of {}X{}".format(line_row, line_col))
+            plt.show()
         elif op == "4":
             #Se obtiene la imagen con cv2 y la convierte a una matriz de 3 dimensiones rgb.
             print("Escribe un nuevo nombre de una imagen que este en la carpeta del proyecto:")
